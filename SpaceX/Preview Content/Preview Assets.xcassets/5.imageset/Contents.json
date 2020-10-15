@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "falconsat2.png",
       "idiom" : "universal"
     }
   ],

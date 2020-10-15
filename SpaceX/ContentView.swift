@@ -2,20 +2,19 @@
 //  ContentView.swift
 //  SpaceX
 //
-//  Created by Johnnie Walker on 10/15/20.
+//  Created by Johnnie Walker on 10/8/20.
+//  Copyright © 2020 Johnnie Walker. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var networkController: NetworkController
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        NavigationView {
+            RocketsView(rockets: networkController.rockets)
+        }
+        .onAppear(perform: networkController.fetchRockets)
     }
 }
